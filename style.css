@@ -1,0 +1,339 @@
+root {
+  /* White */
+  --white: #ffffff;
+  --white-base: #ffffff;
+
+  /* Accent */
+  --accent: #4863f7;
+  --accent-600: #4863f7;
+  --accent-500: #7878d7;
+
+  /* Alert */
+  --alert: #ff5c5c;
+  --alert-600: #ff5c5c;
+
+  /* Gray */
+  --gray-900: #0d0d0d;
+  --gray-800: #111111;
+  --gray-700: #1a1a1a;
+  --gray-200: #424242;
+  --gray-100: #737373;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.app-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--gray-900);
+  color: var(--white);
+}
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  padding: 32px;
+  background-color: var(--gray-800);
+  border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+.sidebar h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+}
+
+/* Sidebar list */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar a {
+  color: var(--white);
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+/* Header */
+.site-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.btn-toggle {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+/* Main content */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 62px 124px;
+  gap: 32px;
+  align-items: flex-start;
+  font-size: 1rem;
+}
+
+.prompts {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.prompt {
+  background: var(--gray-800);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.prompt h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+/* Styles for the Figma-inserted symbol (.sym-main and children) */
+.sym-main {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  color: var(--white);
+  margin-bottom: 18px;
+}
+
+.prompt-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prompt-default,
+.prompt-filled {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--gray-100);
+  background: rgba(255,255,255,0.02);
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.prompt-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--accent-500);
+}
+
+.prompt-content {
+  white-space: pre-wrap;
+  line-height: 1.45;
+  color: var(--white);
+  font-size: 0.98rem;
+}
+
+/* Interactive prompt controls */
+.prompt-content {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--white);
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.prompt-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--accent-600);
+  border-color: var(--accent-600);
+}
+
+.checklist-output {
+  margin-top: 18px;
+  background: rgba(255,255,255,0.02);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.checklist-output ul {
+  padding-left: 20px;
+}
+
+.schedule-settings {
+  margin-top: 12px;
+  background: rgba(255,255,255,0.01);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.settings-note {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: var(--gray-100);
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.schedule-input {
+  width: 100%;
+}
+
+.settings-grid label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.visually-hidden { 
+  position: absolute !important; 
+  height: 1px; width: 1px; 
+  overflow: hidden; 
+  clip: rect(1px, 1px, 1px, 1px); 
+  white-space: nowrap; 
+}
+
+@media (max-width: 600px) {
+  .sym-main {
+    padding: 14px;
+  }
+  .prompt-title {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive: stack sidebar on small screens */
+@media (max-width: 800px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+
+  /* Animated hide/show: collapse via max-height for smooth transition on small screens */
+  /* Slide-in sidebar from the left for small screens */
+  .app-container {
+    position: relative;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+    transform: translateX(-110%);
+    transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 200ms ease;
+    z-index: 30;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.4);
+  }
+
+  .sidebar-hidden .sidebar {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+
+  .sidebar-hidden .sidebar + .sidebar-overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* when not hidden, slide into view */
+  .app-container:not(.sidebar-hidden) .sidebar {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* overlay that appears when sidebar is open */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    transition: opacity 220ms ease;
+    z-index: 20;
+    pointer-events: none;
+  }
+
+  .app-container:not(.sidebar-hidden) .sidebar-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* When toggled, hide sidebar on small screens */
+  .sidebar-hidden .sidebar {
+    display: none;
+  }
+
+  main {
+    padding: 24px;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Use Inter from Google Fonts for primary UI text */
+  font-family: 'Inter', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--gray-900);
+  color: var(--white);
+}
+
+/* Ensure inputs and buttons also use Inter */
+input,
+button {
+  font-family: 'Inter', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
